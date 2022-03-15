@@ -42,7 +42,7 @@ def plot_data(filename, include_phase=False, log_scale=False, bode_label_pos="lo
         axs[0].tick_params(axis="y", labelcolor=color)
 
         color="tab:green"
-        axs[1].set_ylabel("Vinkel [deg]", color=color)
+        axs[1].set_ylabel("Vinkel [deg $^\circ$]", color=color)
         axs[1].plot(frequency, phase_response, "-", color=color, label="Faserespons")
         axs[1].legend(loc=phase_label_pos)
         axs[1].tick_params(axis="y", labelcolor=color)
