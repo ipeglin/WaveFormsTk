@@ -1,11 +1,19 @@
 import matplotlib.pyplot as plt
+from tkinter import filedialog
+import tkinter
 import csv
+import os
 
 header = []
 data = []
 
+root = tkinter.Tk()
+root.withdraw()
+
 filename = "" # Path to CSV data file
 
+if not filename:
+    filename = filedialog.askopenfilename(initialdir="/", title="Please select a directory", filetypes=(("CSV files", "*.csv*"), ("All files", "*.*")))
 
 with open(filename) as csvfile:
     csvreader = csv.reader(csvfile)

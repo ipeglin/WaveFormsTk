@@ -1,7 +1,18 @@
 import matplotlib.pyplot as plt
+from tkinter import filedialog
+import tkinter
 import csv
+import os
+
+root = tkinter.Tk()
+root.withdraw()
 
 filename = "" # Path to CSV data file
+
+if not filename:
+    filename = filedialog.askopenfilename(initialdir="/", title="Please select a directory", filetypes=(("CSV files", "*.csv*"), ("All files", "*.*")))
+
+
 logarithmic_x_axis = False # Logarithmix X axis for plot
 
 
