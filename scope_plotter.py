@@ -9,12 +9,11 @@ root.withdraw()
 
 filename = "" # Path to CSV data file
 
-if not filename:
-    filename = filedialog.askopenfilename(initialdir="/", title="Please select a directory", filetypes=(("CSV files", "*.csv*"), ("All files", "*.*")))
-
-
 logarithmic_x_axis = False # Logarithmix X axis for plot
 
+
+if not filename:
+    filename = filedialog.askopenfilename(initialdir="/", title="Please select a directory", filetypes=(("CSV files", "*.csv*"), ("All files", "*.*")))
 
 def plot_data(filename, log_scale=False, referance_opacity=1, measurement_opacity=1):
     header = []

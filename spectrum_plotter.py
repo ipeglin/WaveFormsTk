@@ -12,6 +12,7 @@ root.withdraw()
 
 filename = "" # Path to CSV data file
 
+
 if not filename:
     filename = filedialog.askopenfilename(initialdir="/", title="Please select a directory", filetypes=(("CSV files", "*.csv*"), ("All files", "*.*")))
 

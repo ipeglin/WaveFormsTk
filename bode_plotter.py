@@ -9,15 +9,14 @@ root.withdraw()
 
 filename = "" # Path to CSV data file
 
-if not filename:
-    filename = filedialog.askopenfilename(initialdir="/", title="Please select a directory", filetypes=(("CSV files", "*.csv*"), ("All files", "*.*")))
-
 include_phase_response = True # Plot phase response in addition to amplitude response
 logarithmic_x_axis = False # Logarithmix X axis for plot
 
 position_of_bode_legend = "lower left" # Standard: lower right
 position_of_phase_legend = "lower left" # Standerd: lower right
 
+if not filename:
+    filename = filedialog.askopenfilename(initialdir="/", title="Please select a directory", filetypes=(("CSV files", "*.csv*"), ("All files", "*.*")))
 
 def plot_data(filename, include_phase=False, log_scale=False, bode_label_pos="lower right", phase_label_pos="lower right"):
     header = []
