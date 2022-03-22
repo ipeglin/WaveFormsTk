@@ -7,16 +7,16 @@ import os
 root = tkinter.Tk()
 root.withdraw()
 
-filename = "" # Path to CSV data file
+FILENAME = "" # Path to CSV data file
 
-include_phase_response = True # Plot phase response in addition to amplitude response
-logarithmic_x_axis = False # Logarithmix X axis for plot
+INCLUDE_PHASE_RESPONSE = True # Plot phase response in addition to amplitude response
+LOGARITHMIC_X_AXIS = False # Logarithmix X axis for plot
 
-position_of_bode_legend = "lower left" # Standard: lower right
-position_of_phase_legend = "lower left" # Standerd: lower right
+POSITION_OF_BODE_LEGEND = "upper right" # Standard: lower right
+POSITION_OF_PHASE_LEGEND = "upper right" # Standerd: lower right
 
-if not filename:
-    filename = filedialog.askopenfilename(initialdir="/", title="Please select a directory", filetypes=(("CSV files", "*.csv*"), ("All files", "*.*")))
+if not FILENAME:
+    FILENAME = filedialog.askopenfilename(initialdir="/", title="Please select a directory", filetypes=(("CSV files", "*.csv*"), ("All files", "*.*")))
 
 def plot_data(filename, include_phase=False, log_scale=False, bode_label_pos="lower right", phase_label_pos="lower right"):
     header = []
@@ -70,4 +70,4 @@ def plot_data(filename, include_phase=False, log_scale=False, bode_label_pos="lo
 
     plt.show()
 
-plot_data(filename, include_phase=include_phase_response, log_scale=logarithmic_x_axis, bode_label_pos=position_of_bode_legend, phase_label_pos=position_of_phase_legend)
+plot_data(FILENAME, include_phase=INCLUDE_PHASE_RESPONSE, log_scale=LOGARITHMIC_X_AXIS, bode_label_pos=POSITION_OF_BODE_LEGEND, phase_label_pos=POSITION_OF_PHASE_LEGEND)
