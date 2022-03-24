@@ -9,6 +9,10 @@ root.withdraw()
 
 filename = "" # Path to CSV data file
 
+SAVE_FIGURE = True
+SAVE_NAME = "scope_realized_circuit"
+SAVE_DIRECTORY = ""
+
 logarithmic_x_axis = False # Logarithmix X axis for plot
 
 
@@ -38,10 +42,20 @@ def plot_data(filename, log_scale=False, referance_opacity=1, measurement_opacit
     if (log_scale):
         plt.xscale("log")
 
-    plt.xlabel("Endring [dB]")
-    plt.ylabel("Frekvens [Hz]")
+    plt.ylabel("Spenning [V]")
+    plt.xlabel("Tid [s]")
 
-    plt.legend(["Inngangssignal", "Utgangssignal"], loc="upper right")
+    plt.legend(["$V_1$", "$V_2$"], loc="upper right")
+
+    if (SAVE_FIGURE):
+        if (SAVE_DIRECTORY != "" and SAVE_NAME != ""):
+            plt.savefig(f"{SAVE_DIRECTORY}/{SAVE_NAME}.png")
+        elif (SAVE_DIRECTORY == "" and SAVE_NAME != ""):
+            FULL_SAVE_PATH = filedialog.askdirectory(initialdir=".", title="Please select a directory")
+            plt.savefig(f"{FULL_SAVE_PATH}/{SAVE_NAME}.png")
+        else:
+            save_name_input = input("Name of figure: ")
+            plt.savefig(f"{save_name_input}.png")
 
     plt.show()
 
