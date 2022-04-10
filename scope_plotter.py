@@ -45,7 +45,7 @@ def plot_data(filename, log_scale=False, referance_opacity=1, measurement_opacit
     plt.ylabel("Spenning [V]")
     plt.xlabel("Tid [s]")
 
-    plt.legend(["$V_1$", "$V_2$"], loc="upper right")
+    plt.legend(["$v_1$", "$v_2$"], loc="upper right")
 
     if (SAVE_FIGURE):
         if (SAVE_DIRECTORY != "" and SAVE_NAME != ""):

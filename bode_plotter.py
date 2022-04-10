@@ -7,7 +7,11 @@ import os
 root = tkinter.Tk()
 root.withdraw()
 
-FILENAME = "" # Path to CSV data file
+FILENAME = "D:/Philip Eglin/Dropbox/NTNU/Elsys/2. Sem/TTT4260 - Elektronisk systemdesign- og analyse 1/Designprosjekter/Designprosjekt 3 - Frekvensmultiplikator/bode_3k_to_9k_Hz.csv" # Path to CSV data file
+
+SAVE_FIGURE = False
+SAVE_NAME = "spectrum_plot"
+SAVE_PATH = ""
 
 INCLUDE_PHASE_RESPONSE = True # Plot phase response in addition to amplitude response
 LOGARITHMIC_X_AXIS = False # Logarithmix X axis for plot
@@ -43,14 +47,14 @@ def plot_data(filename, include_phase=False, log_scale=False, bode_label_pos="lo
 
         color = "tab:blue"
         axs[0].set_ylabel("Amplituderespons [dB]", color=color)
-        axs[0].plot(frequency, ref_voltage, "-", color="tab:orange", label="Referansesignal")
-        axs[0].plot(frequency, amplitude_response, "-", color=color, label="Utgangssignal")
+        axs[0].plot(frequency, ref_voltage, "-", color="tab:orange", label="$v_1$")
+        axs[0].plot(frequency, amplitude_response, "-", color=color, label="$v_2$")
         axs[0].legend(loc=bode_label_pos)
         axs[0].tick_params(axis="y", labelcolor=color)
 
         color="tab:green"
         axs[1].set_ylabel("Vinkel [deg $^\circ$]", color=color)
-        axs[1].plot(frequency, phase_response, "-", color=color, label="Faserespons")
+        axs[1].plot(frequency, phase_response, "-", color=color, label="faserespons")
         axs[1].legend(loc=phase_label_pos)
         axs[1].tick_params(axis="y", labelcolor=color)
 
@@ -68,6 +72,16 @@ def plot_data(filename, include_phase=False, log_scale=False, bode_label_pos="lo
     if (log_scale):
         plt.xscale("log")
 
+    if (SAVE_FIGURE):
+        if (SAVE_PATH != "" and SAVE_NAME != ""):
+            plt.savefig(f"{SAVE_PATH}/{SAVE_NAME}.png")
+        elif (SAVE_PATH == "" and SAVE_NAME != ""):
+            directory_path = filedialog.askdirectory(initialdir=".", title="Please select a directory")
+            plt.savefig(f"{directory_path}/{SAVE_NAME}.png")
+        else:
+            FULL_SAVE_PATH = filedialog.askopenfilename(initialdir=".", title="Please select a directory", filetypes=(("PNG files", "*.png*"), ("All files", "*.*")))
+            plt.savefig(FULL_SAVE_PATH)
+            
     plt.show()
 
 plot_data(FILENAME, include_phase=INCLUDE_PHASE_RESPONSE, log_scale=LOGARITHMIC_X_AXIS, bode_label_pos=POSITION_OF_BODE_LEGEND, phase_label_pos=POSITION_OF_PHASE_LEGEND)
