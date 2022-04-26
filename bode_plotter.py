@@ -7,7 +7,7 @@ import os
 root = tkinter.Tk()
 root.withdraw()
 
-FILENAME = "D:/Philip Eglin/Dropbox/NTNU/Elsys/2. Sem/TTT4260 - Elektronisk systemdesign- og analyse 1/Designprosjekter/Designprosjekt 3 - Frekvensmultiplikator/bode_3k_to_9k_Hz.csv" # Path to CSV data file
+FILENAME = "" # Path to CSV data file
 
 SAVE_FIGURE = False
 SAVE_NAME = "spectrum_plot"
