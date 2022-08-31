@@ -35,7 +35,7 @@ def get_save_path(init_dir='') -> str:
   save_dir: str = filedialog.askdirectory(initialdir=init_dir, title='Select where to save the file')
   save_name: str = ''
   while (save_name == ''):
-    save_name: str = input('Name of saved plot: ')
+    save_name: str = input('3. Saved plot filename: ')
   
   return f'{save_dir}/{save_name}.{globals.DEFAULT_SAVE_FILETYPE}'
 
