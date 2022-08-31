@@ -6,7 +6,7 @@ import handlers.datahandler as dh
 import handlers.plothandler as ph
 
 def check_input(input_num, length) -> bool:
-  if (input_num != '' or input_num not in range(0, length + 1)):
+  if (input_num != '' and input_num in range(0, length)):
     return True
 
   return False
@@ -17,7 +17,10 @@ def get_plt_type(types=[]):
   for index, plt_type in enumerate(types):
     print(f'[{index}] {plt_type}')
   
-  input_num = int(input('Select plot type: '))
+  try:
+    input_num = int(input('Select plot type: '))
+  except ValueError:
+    return ''
 
   if (check_input(input_num, len(types))):
     return input_num
