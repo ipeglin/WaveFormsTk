@@ -1,1 +1,8 @@
+# Image files
 *.png
+*.svg
+*.jpg
+*.jpeg
+
+# Cache files
+/**/__pycache__
