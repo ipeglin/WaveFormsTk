@@ -6,7 +6,8 @@ This is a plotting kit for using Analog Discovery 2 for the courses [ESDA I](htt
 
 ## Quick start
 
-1. Clone repository with `git clone git@github.com:ipeglin/WaveForms-Tools.git`
+1. Clone repository with `git clone 
+git@github.com:ipeglin/WaveFormsTk.git`
 2. Navigate to your repo with `cd ./WaveFormsTk/`
 3. Select wanted branch with `git checkout BranchName` *(optional)*
 4. Run program with `python3 main.py`
