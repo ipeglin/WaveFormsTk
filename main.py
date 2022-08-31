@@ -14,10 +14,10 @@ def check_input(input_num, length) -> bool:
 
 def get_plt_type(types=[]) -> Union[int, str]:
   for index, plt_type in enumerate(types):
-    print(f'[{index}] {plt_type}')
+    print(f'   [{index}] {plt_type}')
   
   try:
-    input_num: int = int(input('Select plot type: '))
+    input_num: int = int(input('   Select plot type (number): '))
   except ValueError:
     return ''
 
@@ -38,6 +38,7 @@ def check_plot_type_from_filepath(filepath, plot_types) -> str:
 if __name__ == '__main__':
   globals.initialize()
 
+  print('1. Select data file in finder / explorer')
   csv_file: str = get_file(prompt_title='Please select your WaveForms data file', filetypes=['csv'])
   csv_data: List[List[float]] = dh.get_csv_data(csv_file)
 
@@ -47,6 +48,7 @@ if __name__ == '__main__':
 
   selected_plottype: str = check_plot_type_from_filepath(csv_file, available_types)
   while(selected_plottype == ''):
+    print('2. Select plot type')
     selected_plottype: Union[int, str] = get_plt_type(available_types)
 
   ph.plot(available_types[selected_plottype], csv_data)
