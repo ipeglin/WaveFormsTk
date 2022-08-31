@@ -24,7 +24,13 @@ def get_file_types(list_of_types = []) -> tuple:
 def get_save_path(init_dir=''):
   if (init_dir == ''):
     init_dir = globals.DEFAULT_SAVE_FILE_PATH
-  return get_file(init_dir=init_dir,prompt_title='Choose a save path for your file', filetypes=[globals.DEFAULT_SAVE_FILETYPE])
+  
+  save_dir = filedialog.askdirectory(initialdir=init_dir, title='Select where to save the file')
+  save_name = ''
+  while (save_name == ''):
+    save_name = input('Name of saved plot: ')
+  
+  return f'{save_dir}/{save_name}.{globals.DEFAULT_SAVE_FILETYPE}'
 
 def get_file(init_dir='', prompt_title='Please select a file', filetypes=[]) -> str:
   if (init_dir == ''):

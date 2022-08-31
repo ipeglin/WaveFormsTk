@@ -1,6 +1,6 @@
 global_config = {
   'logarithmicAxisX': False,
-  'saveFigure': False
+  'autoSave': False
 }
 
 config = {

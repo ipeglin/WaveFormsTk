@@ -38,7 +38,7 @@ def bode(data, ctx, save_callback) -> None:
   if (get_global_config()['logarithmicAxisX']):
     plt.xscale('log')
 
-  if (get_global_config()['saveFigure']):
+  if (get_global_config()['autoSave']):
     plt.savefig(save_callback())
 
   plt.show()

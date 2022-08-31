@@ -27,15 +27,26 @@ def get_plt_type(types=[]):
 
   return ''
 
+def check_plot_type_from_filepath(filepath, plot_types):
+  for plot_type in plot_types:
+    if (plot_type.lower() in filepath.lower()):
+      print('Automatically determined plot type:', plot_type)
+      return plot_types.index(plot_type)
+
+  return ''
+
+
 if __name__ == '__main__':
   globals.initialize()
 
-  csv_data = dh.get_csv_data(get_file(filetypes=['csv']))
-  if (not csv_data or csv_data == ''): exit()
+  csv_file = get_file(filetypes=['csv'])
+  csv_data = dh.get_csv_data(csv_file)
+
+  if (not csv_data or csv_file == '' or csv_data == []): exit()
 
   available_types = get_available_plot_types()
 
-  selected_plottype = ''
+  selected_plottype = check_plot_type_from_filepath(csv_file, available_types)
   while(selected_plottype == ''):
     selected_plottype = get_plt_type(available_types)
 

@@ -17,7 +17,7 @@ def scope(data, ctx, save_callback) -> None:
 
   plt.legend([f'${legend}$' for legend in ctx["legends"]], loc=ctx["legendPos"])
 
-  if (get_global_config()['saveFigure']):
+  if (get_global_config()['autoSave']):
     plt.savefig(save_callback())
   
   plt.show()

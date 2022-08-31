@@ -18,5 +18,5 @@ def spectrum(data, ctx, save_callback) -> None:
 
   plt.show()
 
-  if (get_global_config()['saveFigure']):
+  if (get_global_config()['autoSave']):
     plt.savefig(save_callback())
