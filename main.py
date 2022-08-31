@@ -1,7 +1,7 @@
 from handlers.confighandler import get_available_plot_types
 from handlers.filehandler import get_file
 
-import globals
+import conf.globals as globals
 import handlers.datahandler as dh
 import handlers.plothandler as ph
 

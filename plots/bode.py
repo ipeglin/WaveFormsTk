@@ -8,7 +8,7 @@ def bode(data, ctx, save_callback) -> None:
 
   plt.xlabel('Frekvens [Hz]')
   
-  if (ctx['inlucdePhaseResponse']):
+  if (ctx['includePhaseResponse']):
     phase_response = [p[3] for p in data]
 
     fig, axs = plt.subplots(2, sharex=True)

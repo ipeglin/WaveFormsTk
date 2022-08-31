@@ -1,7 +1,7 @@
 try:
   import tkinter
   from tkinter import filedialog
-  import globals
+  import conf.globals as globals
 
   root = tkinter.Tk()
 except ImportError:

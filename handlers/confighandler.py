@@ -1,4 +1,4 @@
-from config import global_config, config
+from conf.config import global_config, config
 
 def get_plot_specific_config(plot_type='') -> dict:
   if (plot_type not in config or plot_type == ''): return {}
