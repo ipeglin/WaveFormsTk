@@ -26,7 +26,8 @@ config = {
     'legends': [
       'v_1', 'v_2'
     ],
-    'legendPos': 'upper right' 
+    'legendPos': 'upper right',
+    'phaseLegendPos': 'lower right'
   },
   'spectrum': {
     'includeVoltageChange': True,
@@ -44,6 +45,5 @@ config = {
       'Inngangsignal', 'Utgangssignal'
     ],
     'legendPos': 'upper right',
-    'phaseLegendPos': 'lower right'
   },
 }
