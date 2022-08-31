@@ -2,7 +2,6 @@ from handlers.confighandler import get_global_config
 import matplotlib.pyplot as plt
 
 def spectrum(data, ctx, save_callback) -> None:
-  print(data[1:10])
   frequency = [p[0] for p in data]
   ref_voltage = [p[1] for p in data]
   plt.plot(frequency, ref_voltage, '-', color='orange', alpha=0.85)

@@ -1,8 +1,9 @@
 global_config = {
   'logarithmicAxisX': False,
-  'autoSave': False
+  'autoSave': False # Always save plots on run
 }
 
+# Preferences for each plot type
 config = {
   'scope': {
     'labels': {

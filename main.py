@@ -30,7 +30,7 @@ def get_plt_type(types=[]):
 def check_plot_type_from_filepath(filepath, plot_types):
   for plot_type in plot_types:
     if (plot_type.lower() in filepath.lower()):
-      print('Automatically determined plot type:', plot_type)
+      print('Automatic plot type detection:', plot_type)
       return plot_types.index(plot_type)
 
   return ''
