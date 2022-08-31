@@ -1,10 +1,12 @@
-global_config = {
+from typing import Dict
+
+global_config: Dict = {
   'logarithmicAxisX': False,
   'autoSave': False # Always save plots on run
 }
 
 # Preferences for each plot type
-config = {
+config: Dict = {
   'scope': {
     'labels': {
       'x': {

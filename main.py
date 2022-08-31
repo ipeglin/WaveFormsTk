@@ -1,5 +1,6 @@
 from handlers.confighandler import get_available_plot_types
 from handlers.filehandler import get_file
+from typing import List, Union
 
 import conf.globals as globals
 import handlers.datahandler as dh
@@ -11,14 +12,14 @@ def check_input(input_num, length) -> bool:
 
   return False
 
-def get_plt_type(types=[]):
+def get_plt_type(types=[]) -> Union[int, str]:
 
   print('Select plot type')
   for index, plt_type in enumerate(types):
     print(f'[{index}] {plt_type}')
   
   try:
-    input_num = int(input('Select plot type: '))
+    input_num: int = int(input('Select plot type: '))
   except ValueError:
     return ''
 
@@ -27,7 +28,7 @@ def get_plt_type(types=[]):
 
   return ''
 
-def check_plot_type_from_filepath(filepath, plot_types):
+def check_plot_type_from_filepath(filepath, plot_types) -> str:
   for plot_type in plot_types:
     if (plot_type.lower() in filepath.lower()):
       print('Automatic plot type detection:', plot_type)
@@ -39,8 +40,8 @@ def check_plot_type_from_filepath(filepath, plot_types):
 if __name__ == '__main__':
   globals.initialize()
 
-  csv_file = get_file(filetypes=['csv'])
-  csv_data = dh.get_csv_data(csv_file)
+  csv_file: str = get_file(filetypes=['csv'])
+  csv_data: List[List[float]] = dh.get_csv_data(csv_file)
 
   if (not csv_data or csv_file == '' or csv_data == []): exit()
 
