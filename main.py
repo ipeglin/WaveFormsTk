@@ -13,8 +13,6 @@ def check_input(input_num, length) -> bool:
   return False
 
 def get_plt_type(types=[]) -> Union[int, str]:
-
-  print('Select plot type')
   for index, plt_type in enumerate(types):
     print(f'[{index}] {plt_type}')
   
@@ -31,7 +29,7 @@ def get_plt_type(types=[]) -> Union[int, str]:
 def check_plot_type_from_filepath(filepath, plot_types) -> str:
   for plot_type in plot_types:
     if (plot_type.lower() in filepath.lower()):
-      print('Automatic plot type detection:', plot_type)
+      print('Plot type detected:', plot_type)
       return plot_types.index(plot_type)
 
   return ''

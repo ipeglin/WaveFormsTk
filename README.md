@@ -4,6 +4,10 @@
 
 This is a plotting kit for using Analog Discovery 2 for the courses [ESDA I](https://www.ntnu.edu/studies/courses/TTT4260#tab=omEmnet) and [ESDA II](https://www.ntnu.edu/studies/courses/TTT4265#tab=omEmnet) for [MTELSYS](https://www.ntnu.edu/studies/mtelsys) at NTNU, Trondheim.
 
+## Prerequirements
+* Python 2 or 3
+* tkinter
+
 ## Quick Start
 
 1. Clone repository with `git clone 
@@ -13,6 +17,9 @@ git@github.com:ipeglin/WaveFormsTk.git`
 4. Run program with `python3 main.py`
 
 ## Usage
+
+### Autodetection of Plot Types
+If the name of your CSV data file contains the name of your defined plot types, the program will automatically select til plot type, so there is no need for manual input in the terminal.
 
 ### Add New Plot Types
 
