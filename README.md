@@ -1,4 +1,4 @@
-# WaveForms plotting tool v2.0
+# WaveForms Toolkit v2
 
 ## Summary
 
