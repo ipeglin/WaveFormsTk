@@ -2,7 +2,6 @@ import matplotlib.pyplot as plt
 from tkinter import filedialog
 import tkinter
 import csv
-import os
 
 root = tkinter.Tk()
 root.withdraw()
