@@ -22,6 +22,10 @@ git@github.com:ipeglin/WaveFormsTk.git`
 
 ### Configuration
 
+#### Set prefered file paths
+
+Change the global variables in `conf/globals.py` to the default filepaths you want the file selector should open in. You can also set your prefered filetype for storing plots, but `.svg` is strongly recommended.
+
 #### Enable Plot Autosave
 
 To enable automatic plot saving, change the *autoSave* variable in `conf/config.py`
