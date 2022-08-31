@@ -45,10 +45,10 @@ if __name__ == '__main__':
 
   if (not csv_data or csv_file == '' or csv_data == []): exit()
 
-  available_types = get_available_plot_types()
+  available_types: List[str] = get_available_plot_types()
 
-  selected_plottype = check_plot_type_from_filepath(csv_file, available_types)
+  selected_plottype: str = check_plot_type_from_filepath(csv_file, available_types)
   while(selected_plottype == ''):
-    selected_plottype = get_plt_type(available_types)
+    selected_plottype: Union[int, str] = get_plt_type(available_types)
 
   ph.plot(available_types[selected_plottype], csv_data)
