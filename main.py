@@ -38,7 +38,7 @@ def check_plot_type_from_filepath(filepath, plot_types) -> str:
 if __name__ == '__main__':
   globals.initialize()
 
-  csv_file: str = get_file(filetypes=['csv'])
+  csv_file: str = get_file(prompt_title='Please select your WaveForms data file', filetypes=['csv'])
   csv_data: List[List[float]] = dh.get_csv_data(csv_file)
 
   if (not csv_data or csv_file == '' or csv_data == []): exit()
