@@ -8,7 +8,9 @@ def scope(data, ctx, save_callback) -> None:
   ch2: List[float] = [p[2] for p in data]
 
   plt.plot(time, ch1, '-', color='orange', alpha=1)
-  plt.plot(time, ch2, '-', color='blue', alpha=1)
+  
+  if (len(ctx['legends']) == 2):
+    plt.plot(time, ch2, '-', color='blue', alpha=1)
 
   if (get_global_config()['logarithmicAxisX']):
     plt.xscale('log')
