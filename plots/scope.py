@@ -1,11 +1,10 @@
 from handlers.confighandler import get_global_config
-from typing import List
 import matplotlib.pyplot as plt
 
 def scope(data, ctx, save_callback) -> None:
-  time: List[float] = [p[0] for p in data]
-  ch1: List[float] = [p[1] for p in data]
-  ch2: List[float] = [p[2] for p in data]
+  time = [p[0] for p in data]
+  ch1 = [p[1] for p in data]
+  ch2 = [p[2] for p in data]
 
   plt.plot(time, ch1, '-', color='orange', alpha=1)
   

@@ -1,12 +1,11 @@
-from typing import Union
 from composables.validation import check_input
 
-def get_plt_type(types=[]) -> Union[int, str]:
+def get_plt_type(types=[]):
   for index, plt_type in enumerate(types):
     print(f'   [{index}] {plt_type}')
   
   try:
-    input_num: int = int(input('   Select plot type (number): '))
+    input_num = int(input('   Select plot type (number): '))
   except ValueError:
     return ''
 

@@ -1,9 +1,8 @@
 import csv
-from typing import List
 
 # Get data from CSV file
 # NB! Program expects file headers to work properly
-def get_csv_data(filename='') -> List[List[float]]:
+def get_csv_data(filename=''):
     header = []
     data = []
 

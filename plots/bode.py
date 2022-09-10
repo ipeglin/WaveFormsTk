@@ -1,16 +1,15 @@
 from handlers.confighandler import get_global_config
-from typing import List
 import matplotlib.pyplot as plt
 
 def bode(data, ctx, save_callback) -> None:
-  frequency: List[float] = [p[0] for p in data]
-  ref_voltage: List[float] = [p[1] for p in data]
-  amplitude_response: List[float] = [p[2] for p in data]
+  frequency = [p[0] for p in data]
+  ref_voltage = [p[1] for p in data]
+  amplitude_response = [p[2] for p in data]
 
   plt.xlabel('Frekvens [Hz]')
   
   if (ctx['includePhaseResponse']):
-    phase_response: List = [p[3] for p in data]
+    phase_response = [p[3] for p in data]
 
     fig, axs = plt.subplots(2, sharex=True)
 
