@@ -1,7 +1,7 @@
-from composables.accessability import strip_list_from_none
+from composables.accessability import parse_correct_legend_position, strip_list_from_none
 from composables.validation import get_empty_containers
 from conf.config import global_config, config
-from handlers.inputconfighandler import launch_missing_config_form
+from handlers.inputhandler import launch_missing_config_form
 
 # Get config for a specific plot
 def get_plot_specific_config(plot_type=''):
@@ -32,3 +32,5 @@ def handle_unspecified_enteries(plot_type='', plot_config={}):
 
   if (missing_config != []):
     get_missing_config_options(plot_type, missing_config)
+
+  plot_config['legendPos'] = parse_correct_legend_position(plot_config['legendPos'])
