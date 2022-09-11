@@ -1,4 +1,4 @@
-from handlers.confighandler import get_plot_specific_config
+from handlers.confighandler import get_plot_specific_config, handle_unspecified_enteries
 from handlers.filehandler import get_save_path
 from plots.bode import bode
 from plots.scope import scope
@@ -9,6 +9,8 @@ def plot(plot_type='', data=[]):
   if (plot_type == ''): return
 
   plot_context = get_plot_specific_config(plot_type) # Get selected plot config
+  
+  handle_unspecified_enteries(plot_type, plot_context)
 
   plotting_map = {
     'scope': lambda: scope(data, plot_context, save_callback=get_save_path),
