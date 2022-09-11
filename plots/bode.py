@@ -6,7 +6,6 @@ def bode(data, ctx, save_callback) -> None:
   ref_voltage = [p[1] for p in data]
   amplitude_response = [p[2] for p in data]
 
-  plt.xlabel('Frekvens [Hz]')
   
   if (ctx['includePhaseResponse']):
     phase_response = [p[3] for p in data]
@@ -35,6 +34,8 @@ def bode(data, ctx, save_callback) -> None:
     plt.ylabel('Amplituderespons [dB]')
     plt.legend([f'${legend}$' for legend in ctx['legends']], loc=ctx['legendPos'])
 
+  plt.xlabel('Frekvens [Hz]')
+  
   if (get_global_config()['logarithmicAxisX']):
     plt.xscale('log')
 
