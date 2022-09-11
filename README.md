@@ -16,12 +16,22 @@ git@github.com:ipeglin/WaveFormsTk.git`
 3. Select wanted branch with `git checkout BranchName` *(optional)*
 4. Run program with `python3 main.py`
 
-## Usage
+## Features
 
 ### Autodetection of Plot Types
 If the name of your CSV data file contains the name of your defined plot types, the program will automatically select til plot type, so there is no need for manual input in the terminal.
 
-### Add New Plot Types
+**Out-of-the-box detection keywords:**
+* Scope
+* Bode
+* Spectrum
+
+### Checking for missing configurations
+If a plot is missing important values in its configuration, the program will prompt the user for input. As of now, this check is only limited to plot legends and legend position. However updates to this feature may follow in the near future.
+
+## Usage
+
+### Adding New Plot Types
 
 1. Create plot script in the `plots/` folder.
 2. Create relevant config options for the new plot in the `config` variable in `conf/config.py`.
