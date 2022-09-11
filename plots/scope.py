@@ -17,7 +17,7 @@ def scope(data, ctx, save_callback) -> None:
   plt.xlabel(f'{ctx["labels"]["x"]["text"]} [{ctx["labels"]["x"]["unit"]}]')
   plt.ylabel(f'{ctx["labels"]["y"]["text"]} [{ctx["labels"]["y"]["unit"]}]')
 
-  plt.legend([f'${legend}$' for legend in ctx["legends"]], loc=ctx["legendPos"])
+  plt.legend([f'${legend}$' for legend in ctx['legends']], loc=ctx['legendPos'])
 
   if (get_global_config()['autoSave']):
     plt.savefig(save_callback())

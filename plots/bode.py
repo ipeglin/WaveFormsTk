@@ -14,26 +14,26 @@ def bode(data, ctx, save_callback) -> None:
     fig, axs = plt.subplots(2, sharex=True)
 
     color = 'tab:blue'
-    axs[0].set_ylabel("Amplituderespons [dB]", color=color)
-    axs[0].plot(frequency, ref_voltage, "-", color="tab:orange", label=ctx["legends"][0])
-    axs[0].plot(frequency, amplitude_response, "-", color=color, label=ctx["legends"][1])
+    axs[0].set_ylabel('Amplituderespons [dB]', color=color)
+    axs[0].plot(frequency, ref_voltage, '-', color='tab:orange', label=ctx['legends'][0])
+    axs[0].plot(frequency, amplitude_response, '-', color=color, label=ctx['legends'][1])
     axs[0].legend(loc=ctx['legendPos'])
-    axs[0].tick_params(axis="y", labelcolor=color)
+    axs[0].tick_params(axis='y', labelcolor=color)
 
     color = 'tab:green'
-    axs[1].set_ylabel("Vinkel [deg $^\circ$]", color=color)
-    axs[1].plot(frequency, phase_response, "-", color=color, label="Faserespons")
-    axs[1].legend(loc=ctx["phaseLegendPos"])
-    axs[1].tick_params(axis="y", labelcolor=color)
+    axs[1].set_ylabel('Vinkel [deg $^\circ$]', color=color)
+    axs[1].plot(frequency, phase_response, '-', color=color, label='Faserespons')
+    axs[1].legend(loc=ctx['phaseLegendPos'])
+    axs[1].tick_params(axis='y', labelcolor=color)
 
     fig.tight_layout()
   
   else:
-    plt.plot(frequency, ref_voltage, "-", color="orange")
-    plt.plot(frequency, amplitude_response, "-", color="blue")
+    plt.plot(frequency, ref_voltage, '-', color='orange')
+    plt.plot(frequency, amplitude_response, '-', color='blue')
 
-    plt.ylabel("Amplituderespons [dB]")
-    plt.legend([f'${legend}$' for legend in ctx["legends"]], loc=ctx["legendPos"])
+    plt.ylabel('Amplituderespons [dB]')
+    plt.legend([f'${legend}$' for legend in ctx['legends']], loc=ctx['legendPos'])
 
   if (get_global_config()['logarithmicAxisX']):
     plt.xscale('log')

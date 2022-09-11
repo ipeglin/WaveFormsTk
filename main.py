@@ -8,7 +8,7 @@ import handlers.datahandler as dh
 import handlers.plothandler as ph
 
 if __name__ == '__main__':
-  globals.initialize()
+  globals.initialize() # Set global variables
 
   print('1. Select data file in finder / explorer')
   csv_file = get_file(prompt_title='Please select your WaveForms data file', filetypes=['csv'])
@@ -20,7 +20,7 @@ if __name__ == '__main__':
   selected_plottype = check_plot_type_from_filepath(csv_file, available_types)
 
   while(selected_plottype == ''):
-    print('2. Select plot type')
+    print('1b. Select plot type')
     selected_plottype = get_plt_type(available_types)
 
   ph.plot(available_types[selected_plottype], csv_data)
