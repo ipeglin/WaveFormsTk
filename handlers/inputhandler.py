@@ -2,7 +2,7 @@ from composables.accessability import parse_correct_legend_position, separate_st
 from composables.validation import validate_config_entry
 
 def get_input_prompt(config_name, config_type):
-  if (isinstance(config_type, list)): return input(f'{config_name.capitalize()} (separer med komma): ')
+  if (isinstance(config_type, list)): return input(f'{config_name.capitalize()} (comma separated): ')
 
   return input(f'   {config_name.capitalize()}: ')
 
