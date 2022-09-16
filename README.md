@@ -10,10 +10,9 @@ This is a plotting kit for using Analog Discovery 2 for the courses [ESDA I](htt
 
 ## Quick Start
 
-1. Download the Toolkit with by pressing *Code > Download ZIP*
-2. Unzip the downloaded folder
-3. Navigate to your repo with `cd ./WaveFormsTk/`
-4. Run program with `python3 main.py`
+1. Download the intended asset underneath Releases.
+3. Navigate to the downloaded folder with terminal or finder / explorer.
+4. Run the python script i.e. with `python3 main.py`.
 
 ## Features
 
