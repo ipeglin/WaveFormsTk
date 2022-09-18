@@ -2,13 +2,19 @@ from handlers.confighandler import get_global_config
 import matplotlib.pyplot as plt
 
 def scope(data, ctx, save_callback) -> None:
+  has_two_channels = True
+
   time = [p[0] for p in data]
   ch1 = [p[1] for p in data]
-  ch2 = [p[2] for p in data]
+  
+  try:
+    ch2 = [p[2] for p in data]
+  except IndexError:
+    has_two_channels = False
 
   plt.plot(time, ch1, '-', color='orange', alpha=1)
   
-  if (len(ctx['legends']) == 2):
+  if (len(ctx['legends']) == 2 and has_two_channels):
     plt.plot(time, ch2, '-', color='blue', alpha=1)
 
   if (get_global_config()['logarithmicAxisX']):
