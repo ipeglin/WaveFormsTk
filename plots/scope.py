@@ -2,10 +2,13 @@ from handlers.confighandler import get_global_config
 import matplotlib.pyplot as plt
 
 def scope(data, ctx, save_callback) -> None:
-  has_two_channels = True
+  try:
+    time = [p[0] for p in data]
+    ch1 = [p[1] for p in data]
+  except IndexError:
+    return print('ERROR: Insufficient data in CSV file for scope plot')
 
-  time = [p[0] for p in data]
-  ch1 = [p[1] for p in data]
+  has_two_channels = True
   
   try:
     ch2 = [p[2] for p in data]

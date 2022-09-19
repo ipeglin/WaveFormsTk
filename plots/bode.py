@@ -2,13 +2,21 @@ from handlers.confighandler import get_global_config
 import matplotlib.pyplot as plt
 
 def bode(data, ctx, save_callback) -> None:
-  frequency = [p[0] for p in data]
-  ref_voltage = [p[1] for p in data]
-  amplitude_response = [p[2] for p in data]
+  try:
+    frequency = [p[0] for p in data]
+    ref_voltage = [p[1] for p in data]
+    amplitude_response = [p[2] for p in data]
+  except IndexError:
+    return print('ERROR: Insufficient data in CSV file for bode plot')
 
-  
-  if (ctx['includePhaseResponse']):
+  has_phase_response = True
+
+  try:
     phase_response = [p[3] for p in data]
+  except IndexError:
+    has_phase_response = False
+
+  if (ctx['includePhaseResponse'] and has_phase_response):
 
     fig, axs = plt.subplots(2, sharex=True)
 
@@ -29,6 +37,7 @@ def bode(data, ctx, save_callback) -> None:
   
   else:
     plt.plot(frequency, ref_voltage, '-', color='orange')
+
     plt.plot(frequency, amplitude_response, '-', color='blue')
 
     plt.ylabel('Amplituderespons [dB]')
