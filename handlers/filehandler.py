@@ -1,14 +1,14 @@
 try:
   # Python3
   import tkinter
-  from tkinter import filedialog
+  from tkinter import filedialog as fd
   import conf.globals as globals
 
   root = tkinter.Tk()
 except ImportError:
   # Python2
   import Tkinter
-  from Tkinter import filedialog
+  from Tkinter import filedialog as fd
   import conf.globals as globals
 
   root = Tkinter.Tk()
@@ -30,7 +30,7 @@ def get_save_path(init_dir=''):
   if (init_dir == ''):
     init_dir = globals.DEFAULT_SAVE_FILE_PATH
   
-  save_dir = filedialog.askdirectory(initialdir=init_dir, title='Select where to save the file')
+  save_dir = fd.askdirectory(initialdir=init_dir, title='Select where to save the file')
   save_name = ''
   while (save_name == ''):
     save_name = input('3. Saved plot filename: ')
@@ -43,8 +43,8 @@ def get_file(init_dir='', prompt_title='Please select a file', filetypes=[]):
     init_dir = globals.DEFAULT_DATA_FILE_PATH
 
   list_of_filetypes = get_file_types(filetypes)
-  return filedialog.askopenfilename(initialdir=init_dir, title=prompt_title, filetypes=list_of_filetypes)
+  return fd.askopenfilename(initialdir=init_dir, title=prompt_title, filetypes=list_of_filetypes)
 
 # Get directory path with finder / explorer
 def get_directory(init_dir=''):
-  return filedialog.askdirectory(initialdir=init_dir, title='Please select a directory')
+  return fd.askdirectory(initialdir=init_dir, title='Please select a directory')
