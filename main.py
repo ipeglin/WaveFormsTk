@@ -12,6 +12,7 @@ if __name__ == '__main__':
 
   print('1. Select data file in finder / explorer')
   csv_file = get_file(prompt_title='Please select your WaveForms data file', filetypes=['csv'])
+  print(f'\tSelected file: {csv_file}')
   csv_data = dh.get_csv_data(csv_file)
 
   if (not csv_data or csv_file == '' or csv_data == []): exit()

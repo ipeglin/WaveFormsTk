@@ -2,7 +2,8 @@ from handlers.confighandler import get_global_config
 import matplotlib.pyplot as plt
 
 def spectrum(data, ctx, save_callback) -> None:
-  if (len(data) != 5):
+  # Check if the spectrum data contains four columns
+  if (len(data[0]) < 4):
     return print('ERROR: Missing data columns in CSV file.\nAs of now, WaveFormsTk only supports fully detailed datafiles for spectrum (5 Columns with frequency, channels and their phases).')
     
   try:
