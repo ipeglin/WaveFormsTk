@@ -22,8 +22,8 @@ def bode(data, ctx, save_callback) -> None:
 
     color = 'tab:blue'
     axs[0].set_ylabel('Amplituderespons [dB]', color=color)
-    axs[0].plot(frequency, ref_voltage, '-', color='tab:orange', label=ctx['legends'][0])
-    axs[0].plot(frequency, amplitude_response, '-', color=color, label=ctx['legends'][1])
+    axs[0].plot(frequency, ref_voltage, '-', color='tab:orange', label=f'${ctx["legends"][0]}$')
+    axs[0].plot(frequency, amplitude_response, '-', color=color, label=f'${ctx["legends"][1]}$')
     axs[0].legend(loc=ctx['legendPos'])
     axs[0].tick_params(axis='y', labelcolor=color)
 
